@@ -1,0 +1,16 @@
+ESHARAH AI - Model evaluation (2024-Q4)
+Target: observed Ookla average download speed (Mbps)
+Coverage feature: 2024 modeled grid, not a measured speed
+Cells: approximate cell records from a newer export; historical bias possible
+Validation: geographically separated 0.5-degree blocks
+Measurements total: 46,557
+Train rows: 40,099
+Test rows: 6,458
+Train geographic blocks: 383
+Test geographic blocks: 96
+Median baseline MAE: 121.24 Mbps
+ML model MAE: 111.85 Mbps
+ML model R2: -0.143
+MAE improvement over baseline: +9.40 Mbps
+Quality check: model beats median baseline
+Deployment status: NOT CONNECTED TO app.py yet

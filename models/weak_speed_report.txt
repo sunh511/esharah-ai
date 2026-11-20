@@ -1,0 +1,41 @@
+ESHARAH AI - Low-speed prediction report
+
+Training period: 2024-Q4
+Target: Ookla download speed <= 15 Mbps
+Note: Low speed does not prove disconnection.
+Features: location, 2024 coverage, cell records
+Cell data export is newer than the Ookla period.
+Evaluation: geographically separated blocks
+
+Total records: 46,557
+Training records: 40,099
+Testing records: 6,458
+Training low-speed share: 17.14%
+Testing low-speed share: 15.76%
+
+Random-ranking AP baseline: 0.158
+Model Average Precision: 0.238
+Model ROC-AUC: 0.628
+Model Brier Score: 0.135
+
+Threshold: 0.30
+  Detected low-speed: 321
+  Missed low-speed: 697
+  False alerts: 1052
+  Correct normal-speed: 4388
+  Precision: 0.234
+  Recall: 0.315
+  F1: 0.269
+
+Threshold: 0.50
+  Detected low-speed: 20
+  Missed low-speed: 998
+  False alerts: 22
+  Correct normal-speed: 5418
+  Precision: 0.476
+  Recall: 0.020
+  F1: 0.038
+
+Status: EXPERIMENTAL
+Not connected to app.py yet.
+Road predictions require independent validation.

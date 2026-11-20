@@ -708,11 +708,14 @@ route_names = [f"{a} إلى {b}" for a, b in ROADS]
 selected_route = st.selectbox(
     "اختر الطريق المطلوب فحصه:", ["جميع الطرق"] + route_names
 )
-show_cells = st.checkbox("إظهار خلايا/أبراج الشبكة على الخريطة", value=True)
+show_cells = st.checkbox("إظهار خلايا/أبراج الشبكة على الخريطة", value=False)
 only_target_area_cells = st.checkbox(
     "تقييد الخلايا بنطاق المنطقة المستهدفة فقط", value=True
 )
-
+show_quality_points = st.checkbox(
+    "إظهار نقاط جودة الشبكة 🟢🟡🔴",
+    value=False
+)
 # موضع بطاقات الطرق بعد الإعدادات، حتى لو حُسبت البطاقات لاحقاً.
 route_cards_section = st.container()
 
@@ -727,7 +730,7 @@ for name, coordinates in PLACES.items():
         icon=folium.Icon(color="blue", icon="info-sign"),
     ).add_to(m)
 
-if not df_metrics.empty:
+if show_quality_points and not df_metrics.empty:
     for _, row in df_metrics.iterrows():
         lat, lon = row["latitude"], row["longitude"]
         dl_speed = row.get("avg_download_mbps", 0)

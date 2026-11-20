@@ -687,7 +687,7 @@ except Exception as error:
     model_problem = str(error)
 
 col1, col2, col3, col4, col5 = st.columns(5)
-col1.metric("عدد الطرق الرئيسية", len(ROADS))
+col1.metric("الطرق المشمولة حاليًا", len(ROADS))
 col2.metric("نقاط القياس المرصودة", len(df_metrics))
 col3.metric("خلايا الشبكة في المنطقة", len(df_cells_area))
 col4.metric("إجمالي خلايا الشبكة", len(df_cells))
@@ -695,7 +695,11 @@ col5.metric(
     "حالة النموذج الذكي",
     "يعمل" if model_bundle is not None else "غير متاح"
 )
-
+st.caption(
+    "🇸🇦 مشروع إشارة حاليًا في المرحلة التجريبية، "
+    "ويشمل عددًا محدودًا من الطرق، "
+    "ويهدف مستقبلًا إلى التوسع ليشمل جميع طرق المملكة العربية السعودية."
+)
 # موضع عرض الخريطة أعلى الإعدادات، مع تنفيذ حساباتها بعد قراءة الإعدادات.
 map_section = st.container()
 
